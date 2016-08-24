@@ -1,0 +1,49 @@
+<ion-view view-title="Playlists">
+  <ion-content>
+		<div class="bar bar-header item-input-inset">
+		  <label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" ng-model="buscar.title" placeholder="Search">
+		  </label>
+		</div>
+  <!--div>
+    <input type="search" ng-model="buscar2">
+    <p ng-repeat="entrada in playlists | filter:buscar"> filter:'comedia'
+      {{entrada.title}}:{{entrada.id}}
+    </p>
+  </div>
+      <div class="list">
+        <a ng-repeat="playlist in playlists | filter:buscar " 
+           href="#/app/playlists/{{playlist.id}}"
+           class="item item-thumbnail-left">
+
+          <img src="{{playlist.img}}" on-hold="showOptions($index)">
+          <h2>{{playlist.title}}</h2>
+          <h4>{{playlist.genero}}</h4>
+        </a>
+
+      </div>
+
+<!-
+
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>-->
+
+    <ion-list>
+      <ion-item on-hold="showOptions( $index )" class="item-thumbnail-left" ng-repeat="playlist in playlists| filter:buscar" href="#/app/playlists/{{playlist.id}}">
+          <img ng-src="{{playlist.img}}">
+          <h2>{{playlist.title}}</h2>
+          <h4>{{playlist.genero}}</h4>
+        <ion-option-button ng-click="deleteComic( $index )" class="button-assertive">
+          Delete
+        </ion-option-button>
+        <ion-option-button ng-click="deleteComic2( $index )" class="button-positive">
+          Add
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

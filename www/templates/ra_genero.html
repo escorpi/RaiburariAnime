@@ -1,0 +1,22 @@
+<ion-view view-title="RA-Genero">
+  <ion-content>
+		<div class="bar bar-header item-input-inset">
+		  <label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" ng-model="buscar.genero" placeholder="Genero">
+		  </label>
+		</div>
+      <div class="list">
+
+        <a ng-repeat="playlist in playlists | filter:buscar " 
+           href="#/app/playlists/{{playlist.id}}"
+           class="item item-thumbnail-left">
+
+          <img ng-src="{{playlist.img}}">
+          <h22>{{playlist.title}}</h22>
+          <h3>{{playlist.genero}}</h3>
+        </a>
+
+      </div>
+  </ion-content>
+</ion-view>

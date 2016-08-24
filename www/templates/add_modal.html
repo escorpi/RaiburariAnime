@@ -1,0 +1,44 @@
+<ion-modal-view>
+
+	<ion-header-bar class="bar-assertive">
+		<h1 class="title">Añadir a mi lista</h1>
+		<div class="buttons">
+			<button ng-click="closeModal()" class="button icon ion-close"></button>
+		</div>
+	</ion-header-bar>
+
+	<ion-content>
+		<form ng-submit="saveComic()">
+			
+			<ion-list>
+			  <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+			  <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
+			</ion-list>
+			<div class="list">
+				
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Me interesa:</span>
+					<input type="text" placeholder="Me interesa" ng-model="comic.title">
+				</label>
+
+				<label class="item item-input item-floating-label">
+					<span class="input-label">visto:</span>
+					<input type="text" placeholder="visto" ng-model="comic.author">
+				</label>
+
+				<label class="item item-input item-floating-label">
+					<span class="input-label">viendo:</span>
+					<input type="number" placeholder="viendo" ng-model="comic.year">
+				</label>
+
+			</div>
+
+			<div class="padding">
+				<button type="submit" class="button button-assertive button-block">Save</button>
+			</div>
+	
+
+
+		</form>
+	</ion-content>
+</ion-modal-view>

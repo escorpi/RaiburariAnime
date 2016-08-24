@@ -1,0 +1,42 @@
+<ion-view view-title="Playlist">
+  <ion-nav-buttons side="right">
+    <!--<button ng-click="addNewComic()" class="button icon ion-plus"></button>
+    -->
+    <button ng-click="showPopover($event)" class="button icon ion-android-more-vertical"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <h1>Informacion {{5+5}}</h1>
+    <ion-list>
+  <ion-item>
+    Mis opciones
+    <ion-option-button class="button-positive">Share</ion-option-button>
+    <ion-option-button class="button-assertive">Edit</ion-option-button>
+  </ion-item>
+    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+    <div id="imgTest"></div>
+    <script type='text/javascript'>
+      function encodeImageFileAsURL() {
+        console.log("==============================> Entro al mensaje " );
+        var filesSelected = document.getElementById("inputFileToLoad").files;
+        if (filesSelected.length > 0) {
+          var fileToLoad = filesSelected[0];
+
+          var fileReader = new FileReader();
+
+          fileReader.onload = function(fileLoadedEvent) {
+            var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+            var newImage = document.createElement('img');
+            newImage.src = srcData;
+
+            document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+            //alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+            console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+          }
+          fileReader.readAsDataURL(fileToLoad);
+        }
+      }
+    </script>
+</ion-list>
+  </ion-content>
+</ion-view>
